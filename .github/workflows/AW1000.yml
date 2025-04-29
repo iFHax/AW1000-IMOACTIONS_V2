@@ -116,6 +116,14 @@ jobs:
               exit 1
           fi
 
+      - name: Clone custom etc repository
+        run: |
+          cd openwrt/
+          git clone https://github.com/intannajwa/etc.git
+          cp -r etc/* package/base-files/files/etc/
+          echo "All files and folders from 'etc' repository copied"
+
+
       - name: Download package
         id: package
         run: |
