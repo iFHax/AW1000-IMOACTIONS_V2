@@ -122,7 +122,7 @@ jobs:
           cd openwrt/
           make defconfig
 
-          if grep -q "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_arcadyan_aw1000=y" openwrt/.config; then
+          if grep -q "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_arcadyan_aw1000=y" .config; then
               echo "✅ AW1000 target device is correctly loaded in .config"
           else
               echo "❌ AW1000 target device is NOT set in .config"
@@ -138,7 +138,7 @@ jobs:
         run: |
           cd openwrt/
 
-          if grep -q "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_arcadyan_aw1000=y" openwrt/.config; then
+          if grep -q "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_arcadyan_aw1000=y" .config; then
               echo "✅ AW1000 target device is correctly loaded in .config"
           else
               echo "❌ AW1000 target device is NOT set in .config"
