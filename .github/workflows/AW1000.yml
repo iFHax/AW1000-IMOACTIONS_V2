@@ -116,13 +116,14 @@ jobs:
               exit 1
           fi
 
-      - name: Clone custom etc repository
+      - name: Set Default Settings
         run: |
           cd openwrt/
+          mkdir -p files/etc
+          cd files/etc
           git clone https://github.com/intannajwa/etc.git
-          cp -r etc/* package/base-files/files/etc/
-          echo "All files and folders from 'etc' repository copied"
-
+          echo "Listing files inside files/etc:"
+          ls -l
 
       - name: Download package
         id: package
