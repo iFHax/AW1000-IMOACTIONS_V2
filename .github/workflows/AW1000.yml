@@ -81,8 +81,10 @@ jobs:
           ln -sf /workdir/openwrt ${GITHUB_WORKSPACE}/openwrt
 
           # Set output information
-          echo "build_tag=OpenWrt_${}_${{ inputs.openwrt_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
-          echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]\n: [ ${} ]"
+          echo "build_tag=OpenWrt_${{ inputs.source_branch }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
+          echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]"
+          # echo "build_tag=OpenWrt_${}_${{ inputs.openwrt_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
+          # echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]\n: [ ${} ]"
           df -hT ${PWD}
           echo "status=success" >> ${GITHUB_OUTPUT}
 
