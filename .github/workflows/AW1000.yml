@@ -123,11 +123,10 @@ jobs:
           cd openwrt/
           mkdir -p files/etc
           cd files
-          mkdir etc
           git clone https://github.com/intannajwa/etc.git
           cd etc
           echo "Listing files inside files/etc:"
-          ls -l
+          ls
 
       - name: Download package
         id: package
