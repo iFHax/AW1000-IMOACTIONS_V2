@@ -60,15 +60,15 @@ jobs:
         run: |
           # Set up compilation source code
           if [[ "${{ inputs.source_branch }}" == *"immortalwrt-master"* ]]; then
-              REPO_URL="https://github.com/intannajwa/immortalwrt"
+              REPO_URL="https://github.com/immortalwrt/immortalwrt"
               REPO_BRANCH="main"
               TAGS_NAME="immortalwrt"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt-openwrt-23.05"* ]]; then
-              REPO_URL="https://github.com/intannajwa/immortalwrt"
+              REPO_URL="https://github.com/immortalwrt/immortalwrt"
               REPO_BRANCH="openwrt-23.05"
               TAGS_NAME="immortalwrt"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt-openwrt-24.10"* ]]; then
-              REPO_URL="https://github.com/intannajwa/immortalwrt"
+              REPO_URL="https://github.com/immortalwrt/immortalwrt"
               REPO_BRANCH="openwrt-24.10"
               TAGS_NAME="immortalwrt"
           else
