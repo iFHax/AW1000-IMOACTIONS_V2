@@ -116,14 +116,14 @@ jobs:
               exit 1
           fi
 
-      - name: Set Default Settings
-        run: |
-          cd openwrt/
-          mkdir -p files/etc
-          cd files/etc
-          git clone https://github.com/intannajwa/etc.git
-          echo "Listing files inside files/etc:"
-          ls -l
+     # - name: Set Default Settings
+     #   run: |
+     #     cd openwrt/
+     #     mkdir -p files/etc
+     #     cd files/etc
+     #     git clone https://github.com/intannajwa/etc.git
+     #    echo "Listing files inside files/etc:"
+     #    ls -l
 
       - name: Download package
         id: package
