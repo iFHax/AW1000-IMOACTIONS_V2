@@ -60,17 +60,17 @@ jobs:
         run: |
           # Set up compilation source code
           if [[ "${{ inputs.source_branch }}" == *"immortalwrt-master"* ]]; then
-              REPO_URL="https://github.com/immortalwrt/immortalwrt"
+              REPO_URL="https://github.com/intannajwa/immortalwrt"
               REPO_BRANCH="main"
-              TAGS_NAME="immortalwrt"
+              TAGS_NAME="intannajwa"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt-openwrt-23.05"* ]]; then
-              REPO_URL="https://github.com/immortalwrt/immortalwrt"
+              REPO_URL="https://github.com/intannajwa/immortalwrt"
               REPO_BRANCH="openwrt-23.05"
-              TAGS_NAME="immortalwrt"
+              TAGS_NAME="intannajwa"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt-openwrt-24.10"* ]]; then
-              REPO_URL="https://github.com/immortalwrt/immortalwrt"
+              REPO_URL="https://github.com/intannajwa/immortalwrt"
               REPO_BRANCH="openwrt-24.10"
-              TAGS_NAME="immortalwrt"
+              TAGS_NAME="intannajwa"
           else
               echo "Unknown source code repository."
               exit 1
@@ -81,8 +81,8 @@ jobs:
           ln -sf /workdir/openwrt ${GITHUB_WORKSPACE}/openwrt
 
           # Set output information
-          echo "build_tag=OpenWrt_${TAGS_NAME}_${{ inputs.openwrt_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
-          echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]\nTAGS_NAME: [ ${TAGS_NAME} ]"
+          echo "build_tag=OpenWrt_${}_${{ inputs.openwrt_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
+          echo -e "REPO_URL: [ ${REPO_URL} ]\nREPO_BRANCH: [ ${REPO_BRANCH} ]\n: [ ${} ]"
           df -hT ${PWD}
           echo "status=success" >> ${GITHUB_OUTPUT}
 
