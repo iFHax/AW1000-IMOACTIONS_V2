@@ -94,7 +94,8 @@ jobs:
       - name: Download Xray Custom WSS 25.3.1
         run: |
           cd openwrt
-          wget https://github.com/pru79/pruhaha/raw/refs/heads/main/xray25.3.31.gz
+          wget -nv -O xray25.3.31 https://github.com/pru79/pruhaha/raw/refs/heads/main/xray25.3.31.gz
+          # wget https://github.com/pru79/pruhaha/raw/refs/heads/main/xray25.3.31.gz
           gunzip xray25.3.31.gz
           chmod +x xray25.3.31
           mkdir -p files/usr/bin
