@@ -10,7 +10,6 @@ env:
   CONFIG_FILE: config/immortalwrt-openwrt-24.10/.config
   PATH_SCRIPT_01: config/immortalwrt-openwrt-24.10/01_path.sh
   PATH_SCRIPT_02: config/immortalwrt-openwrt-24.10/02_path.sh
-  TURBO_PATH: config/immortalwrt-openwrt-24.10/add_turboacc.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -59,10 +58,8 @@ jobs:
         run: |
           [[ -f "${FEEDS_CONF}" ]] && cp -f ${FEEDS_CONF} openwrt/feeds.conf.default
           chmod +x ${PATH_SCRIPT_01}
-          chmod +x ${TURBO_PATH}
           cd openwrt/
           ${GITHUB_WORKSPACE}/${PATH_SCRIPT_01}
-          ${GITHUB_WORKSPACE}/${TURBO_PATH}
 
       - name: Update feeds
         run: cd openwrt/ && ./scripts/feeds update -a
