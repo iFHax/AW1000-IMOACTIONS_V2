@@ -85,12 +85,6 @@ jobs:
               exit 1
           fi
 
-      - name: Moder Passwall 1&2 / openclash
-        run: |
-          chmod +x ${PATH_SCRIPT_03}
-          cd openwrt/
-          ${GITHUB_WORKSPACE}/${PATH_SCRIPT_03}
-
       - name: Download Xray Custom WSS 25.3.1
         run: |
           cd openwrt
@@ -111,6 +105,13 @@ jobs:
           grep -q "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_arcadyan_aw1000=y" .config || exit 1
           make download -j$(nproc)
           find dl -size -1024c -exec rm -f {} \;
+
+      - name: Moder Passwall 1&2 / openclash
+        run: |
+          chmod +x ${PATH_SCRIPT_03}
+          cd openwrt/
+          ${GITHUB_WORKSPACE}/${PATH_SCRIPT_03}
+
 
       - name: Compile the OpenWrt
         id: compile
