@@ -10,6 +10,7 @@ env:
   CONFIG_FILE: config/immortalwrt-openwrt-24.10/.config
   PATH_SCRIPT_01: config/immortalwrt-openwrt-24.10/01_path.sh
   PATH_SCRIPT_02: config/immortalwrt-openwrt-24.10/02_path.sh
+  PATH_SCRIPT_03: config/immortalwrt-openwrt-24.10/03_path.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -67,14 +68,6 @@ jobs:
       - name: Install feeds
         run: cd openwrt/ && ./scripts/feeds install -a
 
-      - name: Install Passwall 2 and OpenClash
-        run: |
-          cd openwrt/
-          ./scripts/feeds update modem_immo
-          ./scripts/feeds install luci-app-passwall
-          ./scripts/feeds install luci-app-passwall2
-          ./scripts/feeds install luci-app-openclash
-
       - name: Load custom configuration
         run: |
           [[ -d "files" ]] && mv -f files openwrt/files
@@ -91,6 +84,12 @@ jobs:
               echo "❌ AW1000 target device is NOT set in .config"
               exit 1
           fi
+
+      - name: Moder Passwall 1&2 / openclash
+        run: |
+          chmod +x ${PATH_SCRIPT_03}
+          cd openwrt/
+          ${GITHUB_WORKSPACE}/${PATH_SCRIPT_03}
 
       - name: Download Xray Custom WSS 25.3.1
         run: |
