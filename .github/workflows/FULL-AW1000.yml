@@ -1,4 +1,4 @@
-name: AW1000-24.10.0
+name: AW1000-24.10.0-FULL
 
 on:
   workflow_dispatch:
