@@ -106,7 +106,7 @@ jobs:
           make download -j$(nproc)
           find dl -size -1024c -exec rm -f {} \;
 
-      - name: Moder Passwall 1&2 / openclash
+      - name: GET Custom Luci App
         run: |
           chmod +x ${PATH_SCRIPT_03}
           cd openwrt/
