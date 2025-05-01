@@ -69,11 +69,11 @@ jobs:
         run: cd openwrt/ && ./scripts/feeds install -a
 
 
-      - name: GET Custom Luci App - moder
-        run: |
-          chmod +x ${PATH_SCRIPT_03}
-          cd openwrt/
-          ${GITHUB_WORKSPACE}/${PATH_SCRIPT_03}
+      #- name: GET Custom Luci App - moder
+      #  run: |
+      #    chmod +x ${PATH_SCRIPT_03}
+      #    cd openwrt/
+      #    ${GITHUB_WORKSPACE}/${PATH_SCRIPT_03}
           
       - name: Load custom configuration
         run: |
