@@ -14,5 +14,5 @@ cp -r mamamiya/luci-app-openclash feeds/luci/applications/
 
 rm -rf mamamiya
 
- ./scripts/feeds update luci
+# ./scripts/feeds update luci
 # ./scripts/feeds install -f -p luci luci-app-passwall luci-app-openclash luci-app-qbittorrent
